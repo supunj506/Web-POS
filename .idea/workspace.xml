@@ -5,14 +5,81 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58c3c307-3f7a-4529-b301-46a980b6b308" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/asset/custom_css/customer_form/customerForm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/custom_css/nav_icon/nav_icon_style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/CustomerArray.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/custom_css/main_form/Main.css" beforeDir="false" afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/custom_css/main_form/Main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/lk.mj.webpos/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/custom_css/main_form/Main.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/custom_css/main_form/Main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap-grid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-grid.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-grid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-grid.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-grid.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap-grid.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-grid.rtl.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap-grid.rtl.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-grid.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap-grid.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-grid.rtl.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap-grid.rtl.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap-reboot.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-reboot.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-reboot.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-reboot.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-reboot.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap-reboot.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-reboot.rtl.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap-reboot.rtl.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-reboot.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap-reboot.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-reboot.rtl.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap-reboot.rtl.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-utilities.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap-utilities.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-utilities.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap-utilities.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-utilities.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap-utilities.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-utilities.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap-utilities.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-utilities.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap-utilities.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-utilities.rtl.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap-utilities.rtl.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-utilities.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap-utilities.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-utilities.rtl.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap-utilities.rtl.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap.rtl.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap.rtl.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap.rtl.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/css/bootstrap.rtl.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/js/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/js/bootstrap.bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/js/bootstrap.bundle.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/js/bootstrap.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/js/bootstrap.esm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/js/bootstrap.esm.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/js/bootstrap.esm.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/js/bootstrap.esm.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/js/bootstrap.esm.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/js/bootstrap.esm.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/js/bootstrap.esm.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/js/bootstrap.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/js/bootstrap.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/js/bootstrap.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/Bootstrap/js/bootstrap.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/JQuery/jquery-3.6.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/JQuery/jquery-3.6.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/css_lib/normalize.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/lib/css_lib/normalize.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/material/icon/icons8-customer-64.png" beforeDir="false" afterPath="$PROJECT_DIR$/asset/material/icon/icons8-customer-64.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/material/icon/icons8-down-button-24.png" beforeDir="false" afterPath="$PROJECT_DIR$/asset/material/icon/icons8-down-button-24.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/material/icon/icons8-more-details-100.png" beforeDir="false" afterPath="$PROJECT_DIR$/asset/material/icon/icons8-more-details-100.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/material/icon/icons8-product-90.png" beforeDir="false" afterPath="$PROJECT_DIR$/asset/material/icon/icons8-product-90.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/material/icon/icons8-purchase-order-96.png" beforeDir="false" afterPath="$PROJECT_DIR$/asset/material/icon/icons8-purchase-order-96.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/material/image/UserImage.png" beforeDir="false" afterPath="$PROJECT_DIR$/asset/material/image/UserImage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/material/image/girl&amp;boy.png" beforeDir="false" afterPath="$PROJECT_DIR$/asset/material/image/girl&amp;boy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/material/logo/superMartLogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/asset/material/logo/superMartLogo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -21,18 +88,22 @@
   "associatedIndex": 8
 }]]></component>
   <component name="ProjectId" id="2U3q0dRZ5sKxiD5zfAfeUXzpoIh" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/GDSE/Second Sem/Internet Technology/Web POS",
+    "last_opened_file_path": "D:/GDSE/Second Sem/Internet Technology/Web POS/asset/custom_css/customer_form",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -43,6 +114,10 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GDSE\Second Sem\Internet Technology\Web POS\asset\custom_css\customer_form" />
+      <recent name="D:\GDSE\Second Sem\Internet Technology\Web POS" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\GDSE\Second Sem\Internet Technology\Web POS" />
     </key>
   </component>
@@ -54,7 +129,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1692178390009</updated>
-      <workItem from="1692178391183" duration="1027000" />
+      <workItem from="1692178391183" duration="10301000" />
     </task>
     <servers />
   </component>

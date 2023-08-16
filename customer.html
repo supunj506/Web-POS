@@ -1,0 +1,262 @@
+<!--/*
+* @author : supun@mj
+* Project : Web POS
+* Date    : 8/16/2023 (Wed)
+* Time    : 2:52 AM
+* For GDSE course of IJSE institute.
+*/-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Super Mart</title>
+    <link href="asset/lib/css_lib/normalize.css" rel="stylesheet">
+    <link href="asset/material/logo/superMartLogo.png" rel="icon">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Rubik&display=swap" rel="stylesheet">
+    <meta content="Super mart,super,mart " name="keywords">
+    <meta content="Sri lanka largest market place" name="description">
+    <meta content="S.M.Jayasinghe" name="author">
+    <meta content="S.M.Jayasinghe" name="owner">
+    <meta content="width=device-width initial-scale=1" name="viewport">
+    <link rel="stylesheet" href="asset/lib/Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="asset/custom_css/nav_icon/nav_icon_style.css">
+    <link rel="stylesheet" href="asset/custom_css/customer_form/customerForm.css">
+<body>
+<header>
+    <section>
+        <img alt="logo.png" id="logo" src="/asset/material/logo/superMartLogo.png">
+        <h2>Super Mart POS System</h2>
+    </section>
+
+    <section>
+        <div>
+            <h4>25-04-2023</h4>
+            <h4>Monday</h4>
+            <h4>12:23</h4>
+        </div>
+        <div>
+            <img alt="userImage.png" id="userImage" src="/asset/material/image/UserImage.png">
+            <p>Supun Jayasinghe</p>
+        </div>
+    </section>
+</header>
+<main>
+    <aside>
+        <nav>
+            <div >
+                <img alt="order.png" class="nav_icon" src="asset/material/icon/icons8-purchase-order-96.png">
+                <h4>Order</h4>
+            </div>
+
+            <div >
+                <img alt="order.png" class="nav_icon" src="asset/material/icon/icons8-customer-64.png">
+                <h4>Customer</h4>
+            </div>
+            <div >
+                <img alt="order.png" class="nav_icon" src="asset/material/icon/icons8-product-90.png">
+                <h4>Items</h4>
+            </div>
+            <div >
+                <img alt="order.png" class="nav_icon" src="asset/material/icon/icons8-more-details-100.png">
+                <h4>Order Details</h4>
+            </div>
+        </nav>
+
+    </aside>
+    <section class="form" id="customerForm">
+        <div>
+            <div>
+                <h2>Manage Customer</h2>
+            </div>
+            <div>
+                <div>
+                    <div>
+                        <p>Customer Details</p>
+                    </div>
+                    <div>
+                        <input class="cusInput" id="inputCusId" placeholder=" Customer ID" type="text">
+                        <input class="cusInput" id="inputCusName" placeholder=" Name" type="text">
+                    </div>
+                    <div>
+                        <input class="cusInput" id="inputCusAddress" placeholder=" Address" type="text">
+                        <input class="cusInput" id="inputCusEmail" placeholder=" Email" type="email">
+                    </div>
+                    <div>
+                        <div id="searchBtn">Search By</div>
+                        <input class="cusInput" id="inputCusIdSearch" placeholder="Customer ID" type="text">
+                    </div>
+                </div>
+                <div>
+                    <div id="addCus">Add Customer</div>
+                    <div id="deleteCus">Delete</div>
+                    <div id="updateCus">Update</div>
+                    <div id="clearCus">Clear</div>
+
+                </div>
+                <div>
+                    <table class="table table-hover table-bordered" id="customer_table">
+                        <thead class="bg-info">
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Email</th>
+                        </tr>
+                        </thead>
+                        <tbody id="cusTBody">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<script src="asset/lib/JQuery/jquery-3.6.1.min.js"></script>
+<script src="db/CustomerArray.js"></script>
+
+<script>
+    let idI = $('#inputCusId');
+    let nameI = $("#inputCusName");
+    let addressI = $("#inputCusAddress");
+    let emailI = $("#inputCusEmail");
+
+    const cusIdRegex =/^(C)[0-9]{3}$/ ;
+    const cusNameRegex = /^[A-z ]{3,30}$/;
+    const cusEmailRegex = /^[a-z0-9]{4,40}@(gmail|yahoo|ymail|email).com$/;
+    const cusAddressRegex = /^[A-z0-9]{4,40}$/;
+
+    let validateAll = false;
+    function regex(status,input){
+        if(status){
+            input.css("outline-color","greenyellow");
+            validateAll = true;
+
+        }else{
+            input.css("outline-color","red");
+            validateAll = false;
+        }
+    }
+
+    idI.on("keyup",function (event){
+        if(cusIdRegex.test(idI.val())){
+            regex(true,idI);
+            if(event.code==="Enter"){
+                nameI.focus();
+
+            }
+
+        }else {
+            regex(false,idI);
+            if(event.code==="Enter"){
+                alert("Check your input again !!!");
+            }
+        }
+
+    })
+    nameI.on("keyup",function (event){
+        if(cusNameRegex.test(nameI.val())){
+            regex(true,nameI);
+            if(event.code==="Enter"){
+                addressI.focus();
+            }
+        }else {
+            regex(false,nameI);
+            if(event.code==="Enter"){
+                alert("Check your input again !!!");
+            }
+        }
+
+    })
+    addressI.on("keyup",function (event){
+        if(cusAddressRegex.test(addressI.val())){
+            regex(true,addressI);
+            if(event.code==="Enter"){
+                emailI.focus();
+            }
+        }else {
+            regex(true,addressI);
+            if(event.code==="Enter"){
+                alert("Check your input again !!!");
+            }
+        }
+
+    })
+    emailI.on("keyup",function (event){
+        if(cusEmailRegex.test(emailI.val())){
+            regex(true,emailI);
+
+        }else {
+            regex(false,emailI);
+            if(event.code==="Enter"){
+                alert("Check your input again !!!");
+            }
+        }
+
+    })
+
+
+    function emptyField() {
+        if(idI.val() === "" || nameI.val() ==="" || addressI.val() ==="" || emailI.val() ===""){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    $('#addCus').on("click",function (){
+
+        if(!emptyField() && validateAll){
+            alert("aulak na");
+            let customerObject={
+                id:idI.val(),
+                name:nameI.val(),
+                address:addressI.val(),
+                email:emailI.val()
+            };
+
+            CustomerArray.push(customerObject);
+            console.log(CustomerArray)
+
+
+        }else {
+
+            alert("wade aul");
+        }
+
+
+        //
+        // console.log(customerObject);
+        //
+        // CustomerArray.push(customerObject);
+        //
+        // console.log(CustomerArray);
+
+    });
+
+
+
+
+
+    // $('#deleteCus').on("click",function (){
+    //     console.log("done")
+    // });
+    // $('#updateCus').on("click",function (){
+    //     console.log("done")
+    // });
+    // $('#clearCus').on("click",function (){
+    //     console.log("done")
+    // });
+    // $('#searchBtn').on("click",function (){
+    //     console.log("done")
+    // });
+
+
+
+
+</script>
+
+</body>
+</html>
