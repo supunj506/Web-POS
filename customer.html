@@ -45,20 +45,20 @@
 <main>
     <aside>
         <nav>
-            <div >
+            <div>
                 <img alt="order.png" class="nav_icon" src="asset/material/icon/icons8-purchase-order-96.png">
                 <h4>Order</h4>
             </div>
 
-            <div >
+            <div>
                 <img alt="order.png" class="nav_icon" src="asset/material/icon/icons8-customer-64.png">
                 <h4>Customer</h4>
             </div>
-            <div >
+            <div>
                 <img alt="order.png" class="nav_icon" src="asset/material/icon/icons8-product-90.png">
                 <h4>Items</h4>
             </div>
-            <div >
+            <div>
                 <img alt="order.png" class="nav_icon" src="asset/material/icon/icons8-more-details-100.png">
                 <h4>Order Details</h4>
             </div>
@@ -118,79 +118,85 @@
 <script src="db/CustomerArray.js"></script>
 
 <script>
+
     let idI = $('#inputCusId');
     let nameI = $("#inputCusName");
     let addressI = $("#inputCusAddress");
     let emailI = $("#inputCusEmail");
 
-    const cusIdRegex =/^(C)[0-9]{3}$/ ;
+    idI.focus();
+
+    const cusIdRegex = /^(C)[0-9]{3}$/;
     const cusNameRegex = /^[A-z ]{3,30}$/;
     const cusEmailRegex = /^[a-z0-9]{4,40}@(gmail|yahoo|ymail|email).com$/;
     const cusAddressRegex = /^[A-z0-9]{4,40}$/;
 
     let validateAll = false;
-    function regex(status,input){
-        if(status){
-            input.css("outline-color","greenyellow");
+
+    function regex(status, input) {
+        if (status) {
+            input.css("outline-color", "greenyellow");
             validateAll = true;
 
-        }else{
-            input.css("outline-color","red");
+        } else {
+            input.css("outline-color", "red");
             validateAll = false;
         }
     }
 
-    idI.on("keyup",function (event){
-        if(cusIdRegex.test(idI.val())){
-            regex(true,idI);
-            if(event.code==="Enter"){
+    idI.on("keyup", function (event) {
+        if (cusIdRegex.test(idI.val())) {
+            regex(true, idI);
+            if (event.code === "Enter") {
                 nameI.focus();
 
             }
 
-        }else {
-            regex(false,idI);
-            if(event.code==="Enter"){
+        } else {
+            regex(false, idI);
+            if (event.code === "Enter") {
                 alert("Check your input again !!!");
             }
         }
 
     })
-    nameI.on("keyup",function (event){
-        if(cusNameRegex.test(nameI.val())){
-            regex(true,nameI);
-            if(event.code==="Enter"){
+    nameI.on("keyup", function (event) {
+        if (cusNameRegex.test(nameI.val())) {
+            regex(true, nameI);
+            if (event.code === "Enter") {
                 addressI.focus();
             }
-        }else {
-            regex(false,nameI);
-            if(event.code==="Enter"){
+        } else {
+            regex(false, nameI);
+            if (event.code === "Enter") {
                 alert("Check your input again !!!");
             }
         }
 
     })
-    addressI.on("keyup",function (event){
-        if(cusAddressRegex.test(addressI.val())){
-            regex(true,addressI);
-            if(event.code==="Enter"){
+    addressI.on("keyup", function (event) {
+        if (cusAddressRegex.test(addressI.val())) {
+            regex(true, addressI);
+            if (event.code === "Enter") {
                 emailI.focus();
             }
-        }else {
-            regex(true,addressI);
-            if(event.code==="Enter"){
+        } else {
+            regex(true, addressI);
+            if (event.code === "Enter") {
                 alert("Check your input again !!!");
             }
         }
 
     })
-    emailI.on("keyup",function (event){
-        if(cusEmailRegex.test(emailI.val())){
-            regex(true,emailI);
-
-        }else {
-            regex(false,emailI);
-            if(event.code==="Enter"){
+    emailI.on("keyup", function (event) {
+        if (cusEmailRegex.test(emailI.val())) {
+            regex(true, emailI);
+            if (event.code === "Enter") {
+                addCustomer();
+            }
+        } else {
+            regex(false, emailI);
+            if (event.code === "Enter") {
                 alert("Check your input again !!!");
             }
         }
@@ -199,45 +205,63 @@
 
 
     function emptyField() {
-        if(idI.val() === "" || nameI.val() ==="" || addressI.val() ==="" || emailI.val() ===""){
+        if (idI.val() === "" || nameI.val() === "" || addressI.val() === "" || emailI.val() === "") {
             return true;
-        }else {
+        } else {
             return false;
         }
     }
 
-    $('#addCus').on("click",function (){
+    function customerIsExists(id){
+        let exists = false;
+        for (let i = 0; i < CustomerArray.length; i++) {
+            if(id === CustomerArray[i].id){
+                exists = true;
+            }
+        }
+        return exists;
+    }
 
-        if(!emptyField() && validateAll){
-            alert("aulak na");
-            let customerObject={
-                id:idI.val(),
-                name:nameI.val(),
-                address:addressI.val(),
-                email:emailI.val()
-            };
-
-            CustomerArray.push(customerObject);
-            console.log(CustomerArray)
+    function loadAllCustomer() {
+        let customer = CustomerArray[CustomerArray.length - 1];
+        let customerForTable = `<tr><td>${customer.id}</td><td>${customer.name}</td><td>${customer.address}</td><td>${customer.email}</td></tr>`;
+        $("#cusTBody").append(customerForTable);
 
 
-        }else {
+    }
+
+    $('#addCus').on("click", function () {
+        $('#addCus').off();
+        addCustomer();
+    });
+
+    function addCustomer() {
+
+        if (!emptyField() && validateAll) {
+            if(!customerIsExists(idI.val())){
+                let customerObject = {
+                    id: idI.val(),
+                    name: nameI.val(),
+                    address: addressI.val(),
+                    email: emailI.val()
+                };
+
+                CustomerArray.push(customerObject);
+                console.log(CustomerArray)
+
+                loadAllCustomer();
+            }else {
+                alert("wade aul "+idI.val()+" customer already in the System !!!");
+                idI.focus();
+            }
+
+
+
+        } else {
 
             alert("wade aul");
         }
-
-
-        //
-        // console.log(customerObject);
-        //
-        // CustomerArray.push(customerObject);
-        //
-        // console.log(CustomerArray);
-
-    });
-
-
-
+    }
 
 
     // $('#deleteCus').on("click",function (){
@@ -252,8 +276,6 @@
     // $('#searchBtn').on("click",function (){
     //     console.log("done")
     // });
-
-
 
 
 </script>
