@@ -106,14 +106,17 @@ main > aside > nav {
 .navigate_btn:hover{
     transform: translateY(-10px);
 }
-
-main > aside > nav > div > img {
-    width: 25%;
-    height: 40%;
+main > aside > nav > a {
+    text-decoration: none;
+    color: #0c0833;
 }
-main > aside > nav > div > h4 {
+main > aside > nav > a > div > img {
+    width: 20%;
+    height: 30%;
+}
+main > aside > nav > a > div > h4 {
     font-family: 'Rubik', sans-serif;
-    font-size: 50px;
+    font-size: 35px;
     margin-top: 5%;
     text-align: center;
     font-weight: bold;

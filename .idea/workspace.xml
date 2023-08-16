@@ -5,67 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58c3c307-3f7a-4529-b301-46a980b6b308" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web POS.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/custom_css/main_form/Main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-grid.rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-grid.rtl.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-grid.rtl.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-grid.rtl.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-reboot.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-reboot.rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-reboot.rtl.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-reboot.rtl.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-reboot.rtl.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-utilities.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-utilities.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-utilities.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-utilities.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-utilities.rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-utilities.rtl.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-utilities.rtl.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap-utilities.rtl.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap.rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap.rtl.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap.rtl.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/css/bootstrap.rtl.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/js/bootstrap.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/js/bootstrap.esm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/js/bootstrap.esm.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/js/bootstrap.esm.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/js/bootstrap.esm.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/js/bootstrap.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/Bootstrap/js/bootstrap.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/JQuery/jquery-3.6.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/lib/css_lib/normalize.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/material/icon/icons8-customer-64.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/material/icon/icons8-down-button-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/material/icon/icons8-more-details-100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/material/icon/icons8-product-90.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/material/icon/icons8-purchase-order-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/material/image/UserImage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/material/image/girl&amp;boy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/material/logo/superMartLogo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lk.mj.webpos/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/asset/custom_css/main_form/Main.css" beforeDir="false" afterPath="$PROJECT_DIR$/lk.mj.webpos/asset/custom_css/main_form/Main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lk.mj.webpos/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/lk.mj.webpos/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +37,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -111,7 +54,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1692178390009</updated>
-      <workItem from="1692178391183" duration="420000" />
+      <workItem from="1692178391183" duration="1027000" />
     </task>
     <servers />
   </component>
