@@ -223,21 +223,27 @@
     }
 
     function loadAllCustomer() {
+
+/*        //--------------------------- mehemath aulak na ---------------------------------------------------------------------------------------
         let customer = CustomerArray[CustomerArray.length - 1];
         let customerForTable = `<tr><td>${customer.id}</td><td>${customer.name}</td><td>${customer.address}</td><td>${customer.email}</td></tr>`;
-        $("#cusTBody").append(customerForTable);
+        $("#cusTBody").append(customerForTable);*/
+
+        // table eke clean karala mulu array ekema aluthin danth puluwan
+        $('#cusTBody').empty();
+        for(var i in CustomerArray){
+            let customerForTable = `<tr><td>${CustomerArray[i].id}</td><td>${CustomerArray[i].name}</td><td>${CustomerArray[i].address}</td><td>${CustomerArray[i].email}</td></tr>`;
+            $("#cusTBody").append(customerForTable);
+        }
+
 
 
     }
 
-    $('#addCus').on("click", function () {
-        $('#addCus').off();
-        addCustomer();
-    });
-
     function addCustomer() {
 
         if (!emptyField() && validateAll) {
+
             if(!customerIsExists(idI.val())){
                 let customerObject = {
                     id: idI.val(),
@@ -245,23 +251,61 @@
                     address: addressI.val(),
                     email: emailI.val()
                 };
-
                 CustomerArray.push(customerObject);
-                console.log(CustomerArray)
 
+                console.log(CustomerArray)
                 loadAllCustomer();
+
             }else {
                 alert("wade aul "+idI.val()+" customer already in the System !!!");
                 idI.focus();
             }
-
-
-
         } else {
 
+
+
             alert("wade aul");
+
         }
     }
+
+    function searchCustomer(id){
+        // for(var i in CustomerArray){
+        //     if(id === CustomerArray[i].id){
+        //         return i;
+        //     }
+        // }
+        for(var i of CustomerArray){
+            if(i.id === id ){
+                return i;
+            }
+        }
+    }
+
+    $('#addCus').on("click", function () {
+        $('#addCus').off();
+        addCustomer();
+    });
+
+    $('#searchBtn').on("click",function(){
+
+        let i = searchCustomer(idI.val());
+        if(i == null){
+            alert("There is no customer in this ID");
+        }else {
+            // nameI.val(CustomerArray[i].name)
+            // addressI.val(CustomerArray[i].address)
+            // emailI.val(CustomerArray[i].email)
+
+            nameI.val(i.name)
+            addressI.val(i.address)
+            emailI.val(i.email)
+
+        }
+    });
+
+
+
 
 
     // $('#deleteCus').on("click",function (){
@@ -270,12 +314,13 @@
     // $('#updateCus').on("click",function (){
     //     console.log("done")
     // });
-    // $('#clearCus').on("click",function (){
-    //     console.log("done")
-    // });
-    // $('#searchBtn').on("click",function (){
-    //     console.log("done")
-    // });
+    $('#clearCus').on("click",function (){
+        idI.val("");
+        nameI.val("");
+        addressI.val("");
+        emailI.val("");
+    });
+
 
 
 </script>
