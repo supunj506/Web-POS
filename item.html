@@ -89,7 +89,7 @@
                 </div>
                 <div>
                     <div id="addItem">Add Item</div>
-                    <div>Search</div>
+                    <div id="searchItem">Search</div>
                     <div id="deleteItem">Delete</div>
                     <div id="updateItem">Update</div>
                     <div id="clearItem">Clear</div>
@@ -121,7 +121,273 @@
 </footer>
 
 <script src="asset/lib/JQuery/jquery-3.6.1.min.js"></script>
-<script src="db/CustomerArray.js"></script>
+<script src="db/ItemArray.js"></script>
+
+<script>
+    const codeI = $('#inputItemId');
+    const nameI = $('#inputItemName');
+    const unitPI = $('#inputItemUnitPrice');
+    const qtyI = $('#inputItemQuantity');
+
+    codeI.focus();
+
+    const itemCode = /^(I)[0-9]{3}$/;
+    const itemNameRegex = /^[A-z ]{3,30}$/;
+    const itemUnitPRegex = /^[0-9]{1,6}$/;
+    const itemQTYRegex = /^[0-9]{1,6}$/;
+
+    let validateAll = false;
+
+    function regex(status, input) {
+        if (status) {
+            input.css("outline-color", "greenyellow");
+            // input.css("box-shadow","0 0 10px greenyellow")
+            validateAll = true;
+
+        } else {
+            input.css("outline-color", "red");
+            // input.css("box-shadow","0 0 10px red")
+            validateAll = false;
+        }
+    }
+
+    codeI.on("keyup", function (event) {
+        if (itemCode.test(codeI.val())) {
+            regex(true, codeI);
+            if (event.code === "Enter") {
+                nameI.focus();
+            }
+
+        } else {
+            regex(false, codeI);
+            if (event.code === "Enter") {
+                alert("Check your input again !!!");
+            }
+        }
+
+    })
+    nameI.on("keyup", function (event) {
+        if (itemNameRegex.test(nameI.val())) {
+            regex(true, nameI);
+            if (event.code === "Enter") {
+                unitPI.focus();
+            }
+        } else {
+            regex(false, nameI);
+            if (event.code === "Enter") {
+                alert("Check your input again !!!");
+            }
+        }
+
+    })
+    unitPI.on("keyup", function (event) {
+        if (itemUnitPRegex.test(unitPI.val())) {
+            regex(true, unitPI);
+            if (event.code === "Enter") {
+                qtyI.focus();
+            }
+        } else {
+            regex(false, unitPI);
+            if (event.code === "Enter") {
+                alert("Check your input again !!!");
+            }
+        }
+
+    })
+    qtyI.on("keyup", function (event) {
+        if (itemQTYRegex.test(qtyI.val())) {
+            regex(true, qtyI);
+            if (event.code === "Enter") {
+                addItem();
+            }
+        } else {
+            regex(false, qtyI);
+            if (event.code === "Enter") {
+                alert("Check your input again !!!");
+            }
+        }
+
+    })
+
+    function emptyField() {
+        return codeI.val() === "" || nameI.val() === "" || unitPI.val() === "" || qtyI.val() === "";
+    }
+
+    function itemIsExists(id){
+        let exists = false;
+        for (let i = 0; i < ItemArray.length; i++) {
+            if(id === ItemArray[i].code){
+                exists = true;
+            }
+        }
+        return exists;
+    }
+
+    function loadAllItem() {
+
+        /*        //--------------------------- mehemath aulak na ---------------------------------------------------------------------------------------
+                let customer = CustomerArray[CustomerArray.length - 1];
+                let customerForTable = `<tr><td>${customer.id}</td><td>${customer.name}</td><td>${customer.address}</td><td>${customer.email}</td></tr>`;
+                $("#cusTBody").append(customerForTable);*/
+
+        // table eke clean karala mulu array ekema aluthin danth puluwan
+        $('#itemTBody').empty();
+        for(var i in ItemArray){
+            let itemForTable = `<tr><td>${ItemArray[i].code}</td><td>${ItemArray[i].name}</td><td>${ItemArray[i].unitPrice}</td><td>${ItemArray[i].qty}</td></tr>`;
+            $("#itemTBody").append(itemForTable);
+        }
+
+
+
+    }
+
+    function addItem() {
+
+        if (!emptyField() && validateAll) {
+
+            if(!itemIsExists(codeI.val())){
+                let itemObject = {
+                    code: codeI.val(),
+                    name: nameI.val(),
+                    unitPrice: unitPI.val(),
+                    qty: qtyI.val()
+                };
+                ItemArray.push(itemObject);
+                loadAllItem();
+                clearInput();
+                codeI.focus();
+            }else {
+                alert("Invalid Input !!! "+codeI.val()+" Item already in the System !!!");
+                codeI.focus();
+            }
+        } else {
+            alert("Invalid Input!!!");
+        }
+        trClick();
+    }
+
+    function updateItem(){
+        if(itemIsExists(codeI.val())) {
+            if (!emptyField() && validateAll) {
+                if (confirm("Do you want to Update Item Code " + codeI.val())) {
+                    let id = getItemIndex(codeI.val());
+                    ItemArray[id].name = nameI.val();
+                    ItemArray[id].unitPrice = unitPI.val();
+                    ItemArray[id].qty = qtyI.val();
+                    loadAllItem();
+                    clearInput();
+                    codeI.focus();
+                }
+            }else {
+                alert("Invalid Input!!!");
+            }
+        }else{
+            alert("There is no Item in this Item Code "+ codeI.val());
+        }
+        trClick();
+    }
+
+    function searchItem(id){
+        // for(var i in CustomerArray){
+        //     if(id === CustomerArray[i].id){
+        //         return i;
+        //     }
+        // }
+        for(var i of ItemArray){
+            if(i.code === id ){
+                return i;
+            }
+        }
+        trClick();
+    }
+
+    function getItemIndex(id) {
+        for (var i in ItemArray){
+            if(id === ItemArray[i].code){
+                return i;
+            }
+        }
+
+    }
+
+    function clearInput(){
+        codeI.val("");
+        nameI.val("");
+        unitPI.val("");
+        qtyI.val("");
+    }
+
+    function trClick(){
+        $("#itemTBody>tr").off();
+        $("#itemTBody>tr").on("click",function (e){
+            codeI.val($(this).children().eq("0").text());
+            nameI.val($(this).children().eq("1").text());
+            unitPI.val($(this).children().eq("2").text());
+            qtyI.val($(this).children().eq("3").text());
+        });
+        $("#itemTBody>tr").on("dblclick",function (e){
+            let b = confirm("Do You Want to remove "+$(this).children().eq("0").text()+" ?");
+            if(b){
+                $(this).remove();
+            }
+            clearInput();
+
+        });
+    }
+
+
+    $("#addItem").on('click',function (){
+        addItem();
+        trClick();
+    });
+
+    $("#searchItem").on('click',function (){
+        let i = searchItem(codeI.val());
+        if(i == null){
+            alert("There is no Item in this Code");
+        }else {
+            // nameI.val(CustomerArray[i].name)
+            // addressI.val(CustomerArray[i].address)
+            // emailI.val(CustomerArray[i].email)
+            nameI.val(i.name)
+            unitPI.val(i.unitPrice)
+            qtyI.val(i.qty)
+
+        }
+        trClick();
+
+    });
+
+    $("#deleteItem").on('click',function (){
+        if(itemIsExists(codeI.val())) {
+            if(confirm("Do you want to delete Item "+codeI.val())){
+                let id = getItemIndex(codeI.val());
+                ItemArray.splice(id,1);
+                loadAllItem();
+                clearInput();
+            }
+        }else{
+            alert("There is no Item in this code "+ codeI.val());
+        }
+        trClick();
+
+    });
+
+    $("#updateItem").on('click',function (){
+        updateItem();
+        trClick();
+
+    });
+
+    $("#clearItem").on('click',function (){
+        clearInput();
+
+    });
+
+
+
+
+</script>
 
 </body>
 </html>
