@@ -22,8 +22,106 @@
     <meta content="width=device-width initial-scale=1" name="viewport">
     <link rel="stylesheet" href="asset/lib/Bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="asset/custom_css/nav_icon/nav_icon_style.css">
-    <link rel="stylesheet" href="asset/custom_css/customer_form/customerForm.css">
+
+    <link rel="stylesheet" href="asset/custom_css/item_form/itemForm.css ">
 <body>
+
+<header>
+    <section>
+        <img alt="logo.png" id="logo" src="/asset/material/logo/superMartLogo.png">
+        <h2>Super Mart POS System</h2>
+    </section>
+
+    <section>
+        <div>
+            <h4>25-04-2023</h4>
+            <h4>Monday</h4>
+            <h4>12:23</h4>
+        </div>
+        <div>
+            <img alt="userImage.png" id="userImage" src="/asset/material/image/UserImage.png">
+            <p>Supun Jayasinghe</p>
+        </div>
+    </section>
+</header>
+
+<main>
+    <aside>
+        <nav>
+            <div>
+                <img alt="order.png" class="nav_icon" src="asset/material/icon/icons8-purchase-order-96.png">
+                <h4>Order</h4>
+            </div>
+
+            <div>
+                <img alt="order.png" class="nav_icon" src="asset/material/icon/icons8-customer-64.png">
+                <h4>Customer</h4>
+            </div>
+            <div>
+                <img alt="order.png" class="nav_icon" src="asset/material/icon/icons8-product-90.png">
+                <h4>Items</h4>
+            </div>
+            <div>
+                <img alt="order.png" class="nav_icon" src="asset/material/icon/icons8-more-details-100.png">
+                <h4>Order Details</h4>
+            </div>
+        </nav>
+
+    </aside>
+    <section class="form" id="itemForm">
+        <div>
+            <div>
+                <h2>Manage Item</h2>
+            </div>
+            <div>
+                <div>
+                    <div>
+                        <p>Item Details</p>
+                    </div>
+                    <div>
+                        <input class="itemInput" id="inputItemId" placeholder=" Item Code" type="text">
+                        <input class="itemInput"  id="inputItemName" placeholder=" Name" type="text">
+                    </div>
+                    <div>
+                        <input  class="itemInput"  id="inputItemUnitPrice" placeholder=" Unite Price" type="text">
+                        <input class="itemInput"  id="inputItemQuantity" placeholder=" Quantity" type="text">
+                    </div>
+                </div>
+                <div>
+                    <div id="addItem">Add Item</div>
+                    <div>Search</div>
+                    <div id="deleteItem">Delete</div>
+                    <div id="updateItem">Update</div>
+                    <div id="clearItem">Clear</div>
+
+                </div>
+                <div>
+                    <table class="table table-hover table-bordered" id="item_table">
+                        <thead class="bg-info">
+                        <tr>
+                            <th scope="col">Item Code</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Unit Price</th>
+                            <th scope="col">Quantity</th>
+                        </tr>
+                        </thead>
+                        <tbody id="itemTBody">
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Copyright @ 2023 All Right Reserved By Supun Madubhashitha</p>
+</footer>
+
+<script src="asset/lib/JQuery/jquery-3.6.1.min.js"></script>
+<script src="db/CustomerArray.js"></script>
 
 </body>
 </html>
