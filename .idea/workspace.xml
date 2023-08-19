@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58c3c307-3f7a-4529-b301-46a980b6b308" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/item.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/asset/custom_css/customer_form/customerForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/custom_css/customer_form/customerForm.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/customer.html" afterDir="false" />
@@ -17,9 +18,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -78,7 +79,7 @@
       <workItem from="1692178391183" duration="15819000" />
       <workItem from="1692252688243" duration="8657000" />
       <workItem from="1692441110642" duration="5456000" />
-      <workItem from="1692451333628" duration="2379000" />
+      <workItem from="1692451333628" duration="2807000" />
     </task>
     <servers />
   </component>
