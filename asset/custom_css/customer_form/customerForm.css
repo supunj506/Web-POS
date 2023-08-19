@@ -46,7 +46,7 @@
 /*---------------------------------------*/
 #customerForm  > div > div:nth-child(2) > div:first-child {
     width: 60%;
-    height: 50%;
+    height: 35%;
     /*background-color: #C2A3F4;*/
     display: flex;
     flex-direction: column;
@@ -57,7 +57,7 @@
 #customerForm  > div > div:nth-child(2) > div:first-child > div {
     display: flex;
     width: 90%;
-    height: 23%;
+    height: 33%;
     align-items: center;
     justify-content: space-around;
 }
@@ -95,7 +95,7 @@
 /*------------------------------------------*/
 
 #customerForm  > div > div:nth-child(2) > div:nth-child(2) {
-    width: 65%;
+    width: 75%;
     height: 10%;
     /*background-color: red;*/
     align-self: flex-end;
@@ -120,6 +120,9 @@
     user-select: none;
 
 }
+#customerForm  > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(5){
+    background-color: red;
+}
 /*-----------------------------------------------------*/
 #customerForm  > div > div:nth-child(2) > div:nth-child(3) {
     width: 90%;
@@ -131,12 +134,8 @@
 
 }
 #customerForm  > div > div:nth-child(2) > div:nth-child(3) > table {
-    /*width: 98%;*/
-    /*height: 95%;*/
-    /*font-size: 1.5em;*/
-    /*font-family: 'Roboto', sans-serif;*/
-    background-color: white;
-    /*border-radius: 1em;*/
+   height: 0;
+    background-color: whitesmoke;
 
 }
 .cusInput{
