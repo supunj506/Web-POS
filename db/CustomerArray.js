@@ -6,4 +6,4 @@
 * For GDSE course of IJSE institute.
 */
 
-var CustomerArray = [];
+let CustomerArray = [];

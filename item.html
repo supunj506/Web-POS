@@ -225,6 +225,15 @@
         return exists;
     }
 
+    function getItemIndex(id) {
+        for (let i in ItemArray){
+            if(id === ItemArray[i].code){
+                return i;
+            }
+        }
+
+    }
+
     function loadAllItem() {
 
         /*        //--------------------------- mehemath aulak na ---------------------------------------------------------------------------------------
@@ -289,6 +298,20 @@
         trClick();
     }
 
+    function deleteItem(id){
+        if(itemIsExists(id)) {
+            if(confirm("Do you want to delete Item "+id)){
+                let index = getItemIndex(codeI.val());
+                ItemArray.splice(index,1);
+                loadAllItem();
+                clearInput();
+            }
+        }else{
+            alert("There is no Item in this code "+ id);
+        }
+        trClick();
+    }
+
     function searchItem(id){
         // for(var i in CustomerArray){
         //     if(id === CustomerArray[i].id){
@@ -301,15 +324,6 @@
             }
         }
         trClick();
-    }
-
-    function getItemIndex(id) {
-        for (let i in ItemArray){
-            if(id === ItemArray[i].code){
-                return i;
-            }
-        }
-
     }
 
     function clearInput(){
@@ -329,10 +343,7 @@
             qtyI.val($(this).children().eq("3").text());
         });
         itemTBTR.on("dblclick",function (){
-            let b = confirm("Do You Want to remove "+$(this).children().eq("0").text()+" ?");
-            if(b){
-                $(this).remove();
-            }
+            deleteItem(codeI.val());
             clearInput();
 
         });
@@ -362,17 +373,7 @@
     });
 
     $("#deleteItem").on('click',function (){
-        if(itemIsExists(codeI.val())) {
-            if(confirm("Do you want to delete Item "+codeI.val())){
-                let id = getItemIndex(codeI.val());
-                ItemArray.splice(id,1);
-                loadAllItem();
-                clearInput();
-            }
-        }else{
-            alert("There is no Item in this code "+ codeI.val());
-        }
-        trClick();
+        deleteItem(codeI.val());
 
     });
 

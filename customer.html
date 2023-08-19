@@ -121,13 +121,11 @@
 
 <script>
 
-
     const idI = $('#inputCusId');
     const nameI = $("#inputCusName");
     const addressI = $("#inputCusAddress");
     const emailI = $("#inputCusEmail");
     const cusTBody = $('#cusTBody');
-
 
     idI.focus();
 
@@ -224,6 +222,15 @@
         return exists;
     }
 
+    function getCustomerIndex(id) {
+        for (let i in CustomerArray){
+            if(id === CustomerArray[i].id){
+                return i;
+            }
+        }
+
+    }
+
     function loadAllCustomer() {
 
 /*        //--------------------------- mehemath aulak na ---------------------------------------------------------------------------------------
@@ -288,6 +295,20 @@
         trClick();
     }
 
+    function deleteCustomer(id){
+        if(customerIsExists(id)) {
+            if(confirm("Do you want to delete Customer "+id)){
+                let index = getCustomerIndex(id);
+                CustomerArray.splice(index,1);
+                loadAllCustomer();
+                clearInput();
+            }
+        }else{
+            alert("There is no customer in this ID "+ idI.val());
+        }
+        trClick();
+    }
+
     function searchCustomer(id){
         // for(var i in CustomerArray){
         //     if(id === CustomerArray[i].id){
@@ -300,15 +321,6 @@
             }
         }
         trClick();
-    }
-
-    function getCustomerIndex(id) {
-        for (let i in CustomerArray){
-            if(id === CustomerArray[i].id){
-                return i;
-            }
-        }
-
     }
 
     function clearInput(){
@@ -328,10 +340,7 @@
             emailI.val($(this).children().eq("3").text());
         });
         cusTBodyTR.on("dblclick",function (){
-            let b = confirm("Do You Want to remove "+$(this).children().eq("0").text()+" ?");
-            if(b){
-                $(this).remove();
-            }
+            deleteCustomer(idI.val());
             clearInput();
 
         });
@@ -361,16 +370,7 @@
     });
 
     $('#deleteCus').on("click",function (){
-        if(customerIsExists(idI.val())) {
-            if(confirm("Do you want to delete Customer "+idI.val())){
-                let id = getCustomerIndex(idI.val());
-                CustomerArray.splice(id,1);
-                loadAllCustomer();
-                clearInput();
-            }
-        }else{
-            alert("There is no customer in this ID "+ idI.val());
-        }
+        deleteCustomer(codeI.val());
         trClick();
     });
 
@@ -383,8 +383,6 @@
     $('#clearCus').on("click",function (){
         clearInput();
     });
-
-
 
 </script>
 
