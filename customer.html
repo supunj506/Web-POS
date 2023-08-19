@@ -77,12 +77,12 @@
                         <p>Customer Details</p>
                     </div>
                     <div>
-                        <input class="cusInput" id="inputCusId" placeholder=" Customer ID" type="text">
-                        <input class="cusInput" id="inputCusName" placeholder=" Name" type="text">
+                        <label for="inputCusId"></label><input class="cusInput" id="inputCusId" placeholder=" Customer ID" type="text">
+                        <label for="inputCusName"></label><input class="cusInput" id="inputCusName" placeholder=" Name" type="text">
                     </div>
                     <div>
-                        <input class="cusInput" id="inputCusAddress" placeholder=" Address" type="text">
-                        <input class="cusInput" id="inputCusEmail" placeholder=" Email" type="email">
+                        <label for="inputCusAddress"></label><input class="cusInput" id="inputCusAddress" placeholder=" Address" type="text">
+                        <label for="inputCusEmail"></label><input class="cusInput" id="inputCusEmail" placeholder=" Email" type="email">
                     </div>
                 </div>
                 <div>
@@ -121,10 +121,13 @@
 
 <script>
 
-    let idI = $('#inputCusId');
-    let nameI = $("#inputCusName");
-    let addressI = $("#inputCusAddress");
-    let emailI = $("#inputCusEmail");
+
+    const idI = $('#inputCusId');
+    const nameI = $("#inputCusName");
+    const addressI = $("#inputCusAddress");
+    const emailI = $("#inputCusEmail");
+    const cusTBody = $('#cusTBody');
+
 
     idI.focus();
 
@@ -208,11 +211,7 @@
     })
 
     function emptyField() {
-        if (idI.val() === "" || nameI.val() === "" || addressI.val() === "" || emailI.val() === "") {
-            return true;
-        } else {
-            return false;
-        }
+        return idI.val() === "" || nameI.val() === "" || addressI.val() === "" || emailI.val() === "";
     }
 
     function customerIsExists(id){
@@ -233,10 +232,10 @@
         $("#cusTBody").append(customerForTable);*/
 
         // table eke clean karala mulu array ekema aluthin danth puluwan
-        $('#cusTBody').empty();
-        for(var i in CustomerArray){
+        cusTBody.empty();
+        for(let i in CustomerArray){
             let customerForTable = `<tr><td>${CustomerArray[i].id}</td><td>${CustomerArray[i].name}</td><td>${CustomerArray[i].address}</td><td>${CustomerArray[i].email}</td></tr>`;
-            $("#cusTBody").append(customerForTable);
+            cusTBody.append(customerForTable);
         }
 
 
@@ -295,7 +294,7 @@
         //         return i;
         //     }
         // }
-        for(var i of CustomerArray){
+        for(let i of CustomerArray){
             if(i.id === id ){
                 return i;
             }
@@ -304,7 +303,7 @@
     }
 
     function getCustomerIndex(id) {
-        for (var i in CustomerArray){
+        for (let i in CustomerArray){
             if(id === CustomerArray[i].id){
                 return i;
             }
@@ -320,14 +319,15 @@
     }
 
     function trClick(){
-        $("#cusTBody>tr").off();
-        $("#cusTBody>tr").on("click",function (e){
+        const cusTBodyTR = $('#cusTBody>tr');
+        cusTBodyTR.off();
+        cusTBodyTR.on("click",function (){
             idI.val($(this).children().eq("0").text());
             nameI.val($(this).children().eq("1").text());
             addressI.val($(this).children().eq("2").text());
             emailI.val($(this).children().eq("3").text());
         });
-        $("#cusTBody>tr").on("dblclick",function (e){
+        cusTBodyTR.on("dblclick",function (){
             let b = confirm("Do You Want to remove "+$(this).children().eq("0").text()+" ?");
             if(b){
                 $(this).remove();

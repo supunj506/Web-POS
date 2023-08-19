@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58c3c307-3f7a-4529-b301-46a980b6b308" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/db/ItemArray.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/CustomerArray.js" beforeDir="false" afterPath="$PROJECT_DIR$/db/CustomerArray.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/customer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/item.html" beforeDir="false" afterPath="$PROJECT_DIR$/item.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +31,12 @@
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
   </component>
+  <component name="JsFlowSettings">
+    <exe-path>D:\GDSE\Second Sem\Internet Technology\Web POS\asset\lib\JQuery\jquery-3.6.1.min.js</exe-path>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -46,19 +53,25 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/GDSE/Second Sem/Internet Technology/Web POS/asset/custom_css/customer_form",
+    "last_opened_file_path": "D:/GDSE/Second Sem/Internet Technology/Web POS",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.sync",
+    "settings.editor.selected.configurable": "preferences.editor",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="QodanaReportsService">
+    <option name="descriptions">
+      <ReportDescription localRun="true" path="C:\Users\supunMJ\AppData\Local\Temp\qodana_output\qodana.sarif.json" reportGuid="27abf031-4e19-4e3f-8971-a6408108eda4" reportId="Web POS/qodana/2023-08-19" />
+    </option>
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\GDSE\Second Sem\Internet Technology\Web POS\asset\custom_css\customer_form" />
@@ -79,11 +92,16 @@
       <workItem from="1692178391183" duration="15819000" />
       <workItem from="1692252688243" duration="8657000" />
       <workItem from="1692441110642" duration="5456000" />
-      <workItem from="1692451333628" duration="8346000" />
+      <workItem from="1692451333628" duration="11463000" />
+      <workItem from="1692468592388" duration="389000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -79,12 +79,12 @@
                         <p>Item Details</p>
                     </div>
                     <div>
-                        <input class="itemInput" id="inputItemId" placeholder=" Item Code" type="text">
-                        <input class="itemInput"  id="inputItemName" placeholder=" Name" type="text">
+                        <label for="inputItemId"></label><input class="itemInput" id="inputItemId" placeholder=" Item Code" type="text">
+                        <label for="inputItemName"></label><input class="itemInput" id="inputItemName" placeholder=" Name" type="text">
                     </div>
                     <div>
-                        <input  class="itemInput"  id="inputItemUnitPrice" placeholder=" Unite Price" type="text">
-                        <input class="itemInput"  id="inputItemQuantity" placeholder=" Quantity" type="text">
+                        <label for="inputItemUnitPrice"></label><input class="itemInput" id="inputItemUnitPrice" placeholder=" Unite Price" type="text">
+                        <label for="inputItemQuantity"></label><input class="itemInput" id="inputItemQuantity" placeholder=" Quantity" type="text">
                     </div>
                 </div>
                 <div>
@@ -124,10 +124,12 @@
 <script src="db/ItemArray.js"></script>
 
 <script>
+    
     const codeI = $('#inputItemId');
     const nameI = $('#inputItemName');
     const unitPI = $('#inputItemUnitPrice');
     const qtyI = $('#inputItemQuantity');
+    const itemTBody = $('#itemTBody');
 
     codeI.focus();
 
@@ -231,10 +233,10 @@
                 $("#cusTBody").append(customerForTable);*/
 
         // table eke clean karala mulu array ekema aluthin danth puluwan
-        $('#itemTBody').empty();
-        for(var i in ItemArray){
+        itemTBody.empty();
+        for(let i in ItemArray){
             let itemForTable = `<tr><td>${ItemArray[i].code}</td><td>${ItemArray[i].name}</td><td>${ItemArray[i].unitPrice}</td><td>${ItemArray[i].qty}</td></tr>`;
-            $("#itemTBody").append(itemForTable);
+            itemTBody.append(itemForTable);
         }
 
 
@@ -293,7 +295,7 @@
         //         return i;
         //     }
         // }
-        for(var i of ItemArray){
+        for(let i of ItemArray){
             if(i.code === id ){
                 return i;
             }
@@ -302,7 +304,7 @@
     }
 
     function getItemIndex(id) {
-        for (var i in ItemArray){
+        for (let i in ItemArray){
             if(id === ItemArray[i].code){
                 return i;
             }
@@ -318,14 +320,15 @@
     }
 
     function trClick(){
-        $("#itemTBody>tr").off();
-        $("#itemTBody>tr").on("click",function (e){
+        const itemTBTR = $('#itemTBody>tr');
+        itemTBTR.off();
+        itemTBTR.on("click",function (){
             codeI.val($(this).children().eq("0").text());
             nameI.val($(this).children().eq("1").text());
             unitPI.val($(this).children().eq("2").text());
             qtyI.val($(this).children().eq("3").text());
         });
-        $("#itemTBody>tr").on("dblclick",function (e){
+        itemTBTR.on("dblclick",function (){
             let b = confirm("Do You Want to remove "+$(this).children().eq("0").text()+" ?");
             if(b){
                 $(this).remove();
@@ -383,8 +386,6 @@
         clearInput();
 
     });
-
-
 
 
 </script>
