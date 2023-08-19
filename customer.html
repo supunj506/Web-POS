@@ -136,10 +136,12 @@
     function regex(status, input) {
         if (status) {
             input.css("outline-color", "greenyellow");
+            // input.css("box-shadow","0 0 10px greenyellow")
             validateAll = true;
 
         } else {
             input.css("outline-color", "red");
+            // input.css("box-shadow","0 0 10px red")
             validateAll = false;
         }
     }
@@ -181,7 +183,7 @@
                 emailI.focus();
             }
         } else {
-            regex(true, addressI);
+            regex(false, addressI);
             if (event.code === "Enter") {
                 alert("Check your input again !!!");
             }
@@ -202,7 +204,6 @@
         }
 
     })
-
 
     function emptyField() {
         if (idI.val() === "" || nameI.val() === "" || addressI.val() === "" || emailI.val() === "") {
@@ -252,21 +253,38 @@
                     email: emailI.val()
                 };
                 CustomerArray.push(customerObject);
-
-                console.log(CustomerArray)
                 loadAllCustomer();
-
+                clearInput();
+                idI.focus();
             }else {
-                alert("wade aul "+idI.val()+" customer already in the System !!!");
+                alert("Invalid Input !!! "+idI.val()+" customer already in the System !!!");
                 idI.focus();
             }
         } else {
-
-
-
-            alert("wade aul");
-
+            alert("Invalid Input!!!");
         }
+        trClick();
+    }
+
+    function updateCustomer(){
+        if(customerIsExists(idI.val())) {
+            if (!emptyField() && validateAll) {
+                if (confirm("Do you want to Update Customer " + idI.val())) {
+                    let id = getCustomerIndex(idI.val());
+                    CustomerArray[id].name = nameI.val();
+                    CustomerArray[id].address = addressI.val();
+                    CustomerArray[id].email = emailI.val();
+                    loadAllCustomer();
+                    clearInput();
+                    idI.focus();
+                }
+            }else {
+                alert("Invalid Input!!!");
+            }
+        }else{
+            alert("There is no customer in this ID "+ idI.val());
+        }
+        trClick();
     }
 
     function searchCustomer(id){
@@ -280,15 +298,51 @@
                 return i;
             }
         }
+        trClick();
     }
 
+    function getCustomerIndex(id) {
+        for (var i in CustomerArray){
+            if(id === CustomerArray[i].id){
+                return i;
+            }
+        }
+
+    }
+
+    function clearInput(){
+        idI.val("");
+        nameI.val("");
+        addressI.val("");
+        emailI.val("");
+    }
+
+    function trClick(){
+        $("#cusTBody>tr").off();
+        $("#cusTBody>tr").on("click",function (e){
+            idI.val($(this).children().eq("0").text());
+            nameI.val($(this).children().eq("1").text());
+            addressI.val($(this).children().eq("2").text());
+            emailI.val($(this).children().eq("3").text());
+        });
+        $("#cusTBody>tr").on("dblclick",function (e){
+            let b = confirm("Do You Want to remove "+$(this).children().eq("0").text()+" ?");
+            if(b){
+                $(this).remove();
+            }
+            clearInput();
+
+        });
+    }
+
+
     $('#addCus').on("click", function () {
-        $('#addCus').off();
         addCustomer();
+        trClick();
+
     });
 
     $('#searchBtn').on("click",function(){
-
         let i = searchCustomer(idI.val());
         if(i == null){
             alert("There is no customer in this ID");
@@ -296,29 +350,36 @@
             // nameI.val(CustomerArray[i].name)
             // addressI.val(CustomerArray[i].address)
             // emailI.val(CustomerArray[i].email)
-
             nameI.val(i.name)
             addressI.val(i.address)
             emailI.val(i.email)
 
         }
+        trClick();
     });
 
+    $('#deleteCus').on("click",function (){
+        if(customerIsExists(idI.val())) {
+            if(confirm("Do you want to delete Customer "+idI.val())){
+                let id = getCustomerIndex(idI.val());
+                CustomerArray.splice(id,1);
+                loadAllCustomer();
+                clearInput();
+            }
+        }else{
+            alert("There is no customer in this ID "+ idI.val());
+        }
+        trClick();
+    });
 
+    $('#updateCus').on("click",function (){
+        updateCustomer();
+        trClick();
 
+    });
 
-
-    // $('#deleteCus').on("click",function (){
-    //     console.log("done")
-    // });
-    // $('#updateCus').on("click",function (){
-    //     console.log("done")
-    // });
     $('#clearCus').on("click",function (){
-        idI.val("");
-        nameI.val("");
-        addressI.val("");
-        emailI.val("");
+        clearInput();
     });
 
 
