@@ -20,16 +20,19 @@
     <meta content="S.M.Jayasinghe" name="author">
     <meta content="S.M.Jayasinghe" name="owner">
     <meta content="width=device-width initial-scale=1" name="viewport">
-    <link rel="stylesheet" href="asset/lib/Bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="asset/custom_css/nav_icon/nav_icon_style.css">
+    <link href="asset/lib/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="asset/custom_css/item_form/itemForm.css ">
+    <link href="asset/custom_css/common/header/header.css" rel="stylesheet">
+    <link href="asset/custom_css/common/nav_icon/nav_icon_style.css" rel="stylesheet">
+
+    <link href="asset/custom_css/item_form/itemForm.css " rel="stylesheet">
 <body>
 
 <header>
     <section>
         <img alt="logo.png" id="logo" src="/asset/material/logo/superMartLogo.png">
         <h2>Super Mart POS System</h2>
+
     </section>
 
     <section>
@@ -48,23 +51,23 @@
 <main>
     <aside>
         <nav>
-            <div>
+            <a href="order.html">
                 <img alt="order.png" class="nav_icon" src="asset/material/icon/icons8-purchase-order-96.png">
                 <h4>Order</h4>
-            </div>
 
-            <div>
+            </a>
+            <a href="customer.html">
                 <img alt="order.png" class="nav_icon" src="asset/material/icon/icons8-customer-64.png">
                 <h4>Customer</h4>
-            </div>
-            <div>
+            </a>
+            <a href="">
                 <img alt="order.png" class="nav_icon" src="asset/material/icon/icons8-product-90.png">
                 <h4>Items</h4>
-            </div>
-            <div>
+            </a>
+            <a href="orderDetails.html">
                 <img alt="order.png" class="nav_icon" src="asset/material/icon/icons8-more-details-100.png">
                 <h4>Order Details</h4>
-            </div>
+            </a>
         </nav>
 
     </aside>
@@ -79,12 +82,16 @@
                         <p>Item Details</p>
                     </div>
                     <div>
-                        <label for="inputItemId"></label><input class="itemInput" id="inputItemId" placeholder=" Item Code" type="text">
-                        <label for="inputItemName"></label><input class="itemInput" id="inputItemName" placeholder=" Name" type="text">
+                        <label for="inputItemId"></label><input class="itemInput" id="inputItemId"
+                                                                placeholder=" Item Code" type="text">
+                        <label for="inputItemName"></label><input class="itemInput" id="inputItemName"
+                                                                  placeholder=" Name" type="text">
                     </div>
                     <div>
-                        <label for="inputItemUnitPrice"></label><input class="itemInput" id="inputItemUnitPrice" placeholder=" Unite Price" type="text">
-                        <label for="inputItemQuantity"></label><input class="itemInput" id="inputItemQuantity" placeholder=" Quantity" type="text">
+                        <label for="inputItemUnitPrice"></label><input class="itemInput" id="inputItemUnitPrice"
+                                                                       placeholder=" Unite Price" type="text">
+                        <label for="inputItemQuantity"></label><input class="itemInput" id="inputItemQuantity"
+                                                                      placeholder=" Quantity" type="text">
                     </div>
                 </div>
                 <div>
@@ -124,7 +131,7 @@
 <script src="db/ItemArray.js"></script>
 
 <script>
-    
+
     const codeI = $('#inputItemId');
     const nameI = $('#inputItemName');
     const unitPI = $('#inputItemUnitPrice');
@@ -215,10 +222,10 @@
         return codeI.val() === "" || nameI.val() === "" || unitPI.val() === "" || qtyI.val() === "";
     }
 
-    function itemIsExists(id){
+    function itemIsExists(id) {
         let exists = false;
         for (let i = 0; i < ItemArray.length; i++) {
-            if(id === ItemArray[i].code){
+            if (id === ItemArray[i].code) {
                 exists = true;
             }
         }
@@ -226,8 +233,8 @@
     }
 
     function getItemIndex(id) {
-        for (let i in ItemArray){
-            if(id === ItemArray[i].code){
+        for (let i in ItemArray) {
+            if (id === ItemArray[i].code) {
                 return i;
             }
         }
@@ -243,11 +250,10 @@
 
         // table eke clean karala mulu array ekema aluthin danth puluwan
         itemTBody.empty();
-        for(let i in ItemArray){
+        for (let i in ItemArray) {
             let itemForTable = `<tr><td>${ItemArray[i].code}</td><td>${ItemArray[i].name}</td><td>${ItemArray[i].unitPrice}</td><td>${ItemArray[i].qty}</td></tr>`;
             itemTBody.append(itemForTable);
         }
-
 
 
     }
@@ -256,7 +262,7 @@
 
         if (!emptyField() && validateAll) {
 
-            if(!itemIsExists(codeI.val())){
+            if (!itemIsExists(codeI.val())) {
                 let itemObject = {
                     code: codeI.val(),
                     name: nameI.val(),
@@ -267,8 +273,8 @@
                 loadAllItem();
                 clearInput();
                 codeI.focus();
-            }else {
-                alert("Invalid Input !!! "+codeI.val()+" Item already in the System !!!");
+            } else {
+                alert("Invalid Input !!! " + codeI.val() + " Item already in the System !!!");
                 codeI.focus();
             }
         } else {
@@ -277,8 +283,8 @@
         trClick();
     }
 
-    function updateItem(){
-        if(itemIsExists(codeI.val())) {
+    function updateItem() {
+        if (itemIsExists(codeI.val())) {
             if (!emptyField() && validateAll) {
                 if (confirm("Do you want to Update Item Code " + codeI.val())) {
                     let id = getItemIndex(codeI.val());
@@ -289,60 +295,60 @@
                     clearInput();
                     codeI.focus();
                 }
-            }else {
+            } else {
                 alert("Invalid Input!!!");
             }
-        }else{
-            alert("There is no Item in this Item Code "+ codeI.val());
+        } else {
+            alert("There is no Item in this Item Code " + codeI.val());
         }
         trClick();
     }
 
-    function deleteItem(id){
-        if(itemIsExists(id)) {
-            if(confirm("Do you want to delete Item "+id)){
+    function deleteItem(id) {
+        if (itemIsExists(id)) {
+            if (confirm("Do you want to delete Item " + id)) {
                 let index = getItemIndex(codeI.val());
-                ItemArray.splice(index,1);
+                ItemArray.splice(index, 1);
                 loadAllItem();
                 clearInput();
             }
-        }else{
-            alert("There is no Item in this code "+ id);
+        } else {
+            alert("There is no Item in this code " + id);
         }
         trClick();
     }
 
-    function searchItem(id){
+    function searchItem(id) {
         // for(var i in CustomerArray){
         //     if(id === CustomerArray[i].id){
         //         return i;
         //     }
         // }
-        for(let i of ItemArray){
-            if(i.code === id ){
+        for (let i of ItemArray) {
+            if (i.code === id) {
                 return i;
             }
         }
         trClick();
     }
 
-    function clearInput(){
+    function clearInput() {
         codeI.val("");
         nameI.val("");
         unitPI.val("");
         qtyI.val("");
     }
 
-    function trClick(){
+    function trClick() {
         const itemTBTR = $('#itemTBody>tr');
         itemTBTR.off();
-        itemTBTR.on("click",function (){
+        itemTBTR.on("click", function () {
             codeI.val($(this).children().eq("0").text());
             nameI.val($(this).children().eq("1").text());
             unitPI.val($(this).children().eq("2").text());
             qtyI.val($(this).children().eq("3").text());
         });
-        itemTBTR.on("dblclick",function (){
+        itemTBTR.on("dblclick", function () {
             deleteItem(codeI.val());
             clearInput();
 
@@ -350,16 +356,16 @@
     }
 
 
-    $("#addItem").on('click',function (){
+    $("#addItem").on('click', function () {
         addItem();
         trClick();
     });
 
-    $("#searchItem").on('click',function (){
+    $("#searchItem").on('click', function () {
         let i = searchItem(codeI.val());
-        if(i == null){
+        if (i == null) {
             alert("There is no Item in this Code");
-        }else {
+        } else {
             // nameI.val(CustomerArray[i].name)
             // addressI.val(CustomerArray[i].address)
             // emailI.val(CustomerArray[i].email)
@@ -372,18 +378,18 @@
 
     });
 
-    $("#deleteItem").on('click',function (){
+    $("#deleteItem").on('click', function () {
         deleteItem(codeI.val());
 
     });
 
-    $("#updateItem").on('click',function (){
+    $("#updateItem").on('click', function () {
         updateItem();
         trClick();
 
     });
 
-    $("#clearItem").on('click',function (){
+    $("#clearItem").on('click', function () {
         clearInput();
 
     });

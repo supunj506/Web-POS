@@ -1,11 +1,3 @@
-<!--/*
-* @author : mj@Max
-* Date    : 8/13/2023 (Sun)
-* Time    : 3:38 PM
-* Project : Web POS
-* For GDSE course of IJSE institute.
-*/-->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,13 +13,16 @@
     <meta content="S.M.Jayasinghe" name="author">
     <meta content="S.M.Jayasinghe" name="owner">
     <meta content="width=device-width initial-scale=1" name="viewport">
-
-    <link rel="stylesheet" href="asset/custom_css/common/header/header.css">
-
     <link rel="stylesheet" href="asset/lib/Bootstrap/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="asset/custom_css/index_form/index_form.css">
+    <link rel="stylesheet" href="asset/custom_css/common/header/header.css">
+    <link rel="stylesheet" href="asset/custom_css/common/nav_icon/nav_icon_style.css">
+
+    <link rel="stylesheet" href="asset/custom_css/orderDetails_form/orderDetails.css">
+
+</head>
 <body>
+
 <header>
     <section>
         <img alt="logo.png" id="logo" src="asset/material/logo/superMartLogo.png">
@@ -46,38 +41,35 @@
         </div>
     </section>
 </header>
+
 <main>
     <aside>
         <nav>
             <a href="order.html">
-            <div id="orderFromBtn" class="navigate_btn">
-                    <img alt="order.png" class="nav_icon" src="asset/material/icon/icons8-purchase-order-96.png">
-                    <h4>Order</h4>
-            </div>
+                <img alt="order.png" class="nav_icon" src="asset/material/icon/icons8-purchase-order-96.png">
+                <h4>Order</h4>
             </a>
             <a href="customer.html">
-            <div id="customerFromBtn" class="navigate_btn">
                 <img alt="order.png" class="nav_icon" src="asset/material/icon/icons8-customer-64.png">
                 <h4>Customer</h4>
-            </div>
             </a>
             <a href="item.html">
-            <div id="itemFromBtn" class="navigate_btn">
                 <img alt="order.png" class="nav_icon" src="asset/material/icon/icons8-product-90.png">
                 <h4>Items</h4>
-            </div>
             </a>
-            <a href="orderDetails.html">
-            <div id="orderDetailsFromBtn" class="navigate_btn">
+            <a href="">
                 <img alt="order.png" class="nav_icon" src="asset/material/icon/icons8-more-details-100.png">
                 <h4>Order Details</h4>
-            </div>
             </a>
         </nav>
+
     </aside>
+
+    <section id="order_details">
+
+    </section>
+
 </main>
-<footer>
-    <p>Copyright  @ 2023 All Right  Reserved By Supun Madubhashitha</p>
-</footer>
+
 </body>
 </html>
